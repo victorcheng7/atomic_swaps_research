@@ -1,0 +1,126 @@
+admin.nodeInfo.enode
+admin.peers
+admin.nodeInfo.enode
+admin.addPeer("enode://7ef1ff318c7cb8724d107decb1e0678d54747802fbaeb4de32c38b542234c039fa098daeb3c0a811e2719660563a2103fa0bf761ddea1f975f23ec7c477a0b48@68.6.124.82:30303?discport=0")
+admin.peers
+miner.start(1)
+eth.accounts
+eth.coinbase
+admin.nodeInfo
+eth.accounts
+eth.coinbase
+miner.hashrate
+miner.start(1)
+miner.stop()
+eth
+eth.getBalance
+eth.getBalance()
+eth.defaultBlock
+eth.blockNumber
+eth.accounts
+eth.getBalance(eth.accounts[0])
+admin.nodeInfo
+miner.start()
+miner.stop()
+miner.start()
+miner.stop()
+eth.accounts
+eth.getBalance(eth.accounts[0])
+admin.peers
+admin.addPeer("enode://82177734334c3607615b9a86b1660b38099f7786ce7a2500dc89dd1f0558c9c2a3ceb3b344266662f2b725c5a59fb0dab9cb9612ff1992c0c0cc16bd995e892d@68.6.124.82:30305?discport=0")
+admin.peers
+admin.addPeer("enode://82177734334c3607615b9a86b1660b38099f7786ce7a2500dc89dd1f0558c9c2a3ceb3b344266662f2b725c5a59fb0dab9cb9612ff1992c0c0cc16bd995e8924.82:30305?discport=0")
+admin.addPeer("enode://82177734334c3607615b9a86b1660b38099f7786ce7a2500dc89dd1f0558c9c2a3ceb3b344266662f2b725c5a59fb0dab9cb9612ff1992c0c0cc16bd995e892d@127.0.0.1:30305?discport=0")
+admin.peers
+admin.addPeer("enode://77797c17ffb2d5c15242d136742257fc2c09adbcc733af6f2b34d8f679e9c187813d8e7cb09ee5bcf8751181fc1679392528d7803778a2fddf5b4772f59ac561@68.6.124.82:30305?discport=0")
+admin.peers
+admin.nodeInfo.enode
+admin.peers
+eth.accounts
+admin.nodeInfo.enode
+admin
+eth.coinbase
+eth.getBalance(eth.accounts[0])
+eth.getBlock(0)
+eth.accounts
+eth.accoutns
+eth.accounts
+getTransactionsByAccount(eth.accounts[0])
+function getTransactionsByAccount(myaccount, startBlockNumber, endBlockNumber) {
+  if (endBlockNumber == null) {
+    endBlockNumber = eth.blockNumber;
+    console.log("Using endBlockNumber: " + endBlockNumber);
+  }
+  if (startBlockNumber == null) {
+    startBlockNumber = endBlockNumber - 1000;
+    console.log("Using startBlockNumber: " + startBlockNumber);
+  }
+  console.log("Searching for transactions to/from account \"" + myaccount + "\" within blocks "  + startBlockNumber + " and " + endBlockNumber);
+  for (var i = startBlockNumber; i <= endBlockNumber; i++) {
+    if (i % 1000 == 0) {
+      console.log("Searching block " + i);
+    }
+    var block = eth.getBlock(i, true);
+    if (block != null && block.transactions != null) {
+      block.transactions.forEach( function(e) {
+        if (myaccount == "*" || myaccount == e.from || myaccount == e.to) {
+          console.log("  tx hash          : " + e.hash + "\n"
+            + "   nonce           : " + e.nonce + "\n"
+            + "   blockHash       : " + e.blockHash + "\n"
+            + "   blockNumber     : " + e.blockNumber + "\n"
+            + "   transactionIndex: " + e.transactionIndex + "\n"
+            + "   from            : " + e.from + "\n" 
+            + "   to              : " + e.to + "\n"
+            + "   value           : " + e.value + "\n"
+            + "   time            : " + block.timestamp + " " + new Date(block.timestamp * 1000).toGMTString() + "\n"
+            + "   gasPrice        : " + e.gasPrice + "\n"
+            + "   gas             : " + e.gas + "\n"
+            + "   input           : " + e.input);
+        }
+      })
+    }
+  }
+}
+getTransactionsByAccount(eth.accounts[0])
+miner.start()
+miner.stop
+miner.stop()
+miner.start()
+miner.stop()
+miner.start()
+miner.stop()
+miner.start()
+miner.stop()
+miner.start()
+miner.stop()
+web3.eth.syncinc
+web3.eth.syncing
+eth.accounts
+miner.start()
+miner.stop()
+eth.syncing
+eth.blockNumber
+miner.start()
+miner.stop()
+miner.start()
+miner.stop()
+eth.syncing
+web3.eth.defaultBlock
+miner.start()
+miner.stop()
+eth.blockNumber
+eth.accounts
+miner.start()
+miner.stop()
+miner.start()
+miners.stop()
+miner.stop()
+miner.start()
+miner.stop()
+miner.start()
+miner.stop()
+eth.accounts[0]
+web3.utils.toChecksumAddress("0x123f681646d4a755815f9cb19e1acc8565a0c2ac")
+eth.blockNumber
+miner.start()
+miner.stop()

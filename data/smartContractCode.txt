@@ -1,0 +1,40 @@
+pragma solidity ^0.4.11;
+
+contract Trent {
+    address owner;
+    address sender = 0xCCb06E380ae6805C7e6c77bE24E215BB3442735A;
+    uint value;
+    enum State {PUBLISHED, REDEEMED, REFUNDED}
+    State state;
+    uint publicrecipientSignature;
+    
+    constructor() public payable {
+        owner = msg.sender;
+        value = msg.value;
+    }
+    
+    function initializerecipientSignature(uint publicSig, uint privateSig) public {
+        //require (publicSig signs privateSig == 1)
+        // Multisignature 
+        require(publicSig == privateSig);
+        publicrecipientSignature = publicSig;
+    }
+    
+    function redeem(uint signature, uint recipientSignature) public{
+        require(signature == 1 && recipientSignature == 1); // Replace with actual signature check
+        // Send some money to other address
+        state = State.REDEEMED;
+    }
+    
+    function refund(uint signature, uint recipientSignature) public{
+        require(signature == 2 && recipientSignature == 2); // Replace with actual signature check
+        // Send some money to other address
+        state = State.REFUNDED;
+    }
+    
+    
+    function destroy() payable public {
+        require(msg.sender == owner);
+        selfdestruct(owner);
+    }
+}

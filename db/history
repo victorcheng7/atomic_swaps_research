@@ -1,0 +1,13 @@
+tail -f myEth.log
+person.newAccount("victor97")
+eth.coinbase
+eth.getBalance(eth.coinbase)
+miner.start()
+miner.stop()
+eth.coinbase
+eth.getBalance(eth.coinbase)
+admin.nodeInfo.enode
+admin.peers
+admin.addPeer("enode://d90080e667e8e10a3171bf5096b661e32af7b52e6ca3253d9236604454f7e59065eac90f3a7e6129c6118e7f17337d84c64f94c087001f3c81c82036b36a6698@127.0.0.1:30304?discport=0")
+admin.peers
+eth.accounts
