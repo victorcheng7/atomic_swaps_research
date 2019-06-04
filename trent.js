@@ -8,7 +8,6 @@ const { keccak, encode, decode, toBuffer} = require('eth-util-lite')
 const rpcURL = 'http://127.0.0.1:8545' // RPC URL goes here
 const web3 = new Web3(rpcURL);
 
-var debug = true;
 
 attemptRedeem();
 

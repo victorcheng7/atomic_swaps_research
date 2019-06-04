@@ -222,3 +222,4 @@ miner.stop()
 personal0x70455025fe4fd09480bd4b206870d97b22adca6
 miner.start()
 miner.stop()
+eth.accounts

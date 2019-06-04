@@ -463,3 +463,15 @@
 03:29:35.783257 table@remove removed @92
 04:48:31.822564 db@close closing
 04:48:31.822991 db@close done T·424.675µs
+=============== Jun 4, 2019 (PDT) ===============
+04:59:00.862983 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+04:59:00.863925 version@stat F·[0 1] S·180B[0B 180B] Sc·[0.00 0.00]
+04:59:00.863940 db@open opening
+04:59:00.864039 journal@recovery F·1
+04:59:00.866149 journal@recovery recovering @103
+04:59:00.866957 memdb@flush created L0@106 N·1 S·164B "n:\xb6..seq,v70":"n:\xb6..seq,v70"
+04:59:00.869709 version@stat F·[1 1] S·344B[164B 180B] Sc·[0.25 0.00]
+04:59:00.871258 db@janitor F·4 G·0
+04:59:00.871282 db@open done T·7.336412ms
+04:59:28.615789 db@close closing
+04:59:28.615889 db@close done T·97.521µs

@@ -78,6 +78,7 @@ module.exports = {
 		return Promise.all(storageProofs.map((proof) => {
 			var check = true;
 			// From https://github.com/zmitton/eth-proof/blob/master/getAndVerify.js
+			// Check https://github.com/aragon/evm-storage-proofs for on-chain verification
 
 			// Validate storage merkle proof checks out
 			if(!getAndVerify.storageAgainstBlockHash(smartContractAddress, proof.key, blockHeaderHash)) check = false;
