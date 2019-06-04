@@ -1,10 +1,11 @@
 const Web3 = require('web3')
 const fs = require('fs')
-const rpcURL = 'http://127.0.0.1:8546' // Your RPC URL goes here
+const rpcURL = 'http://127.0.0.1:8545' // Your RPC URL goes here
 const web3 = new Web3(rpcURL);
 
 const debug = false;
-const smartContractAddress = "0xc40bf4154176bedc7ec5989cf065d3ca3b5deedc"; // Change contract address here
+const smartContractAddress = "0xfb32abae531d7e4cc4d71507de558ee3a24a74ff"; // Change contract address here
+
 
 function retrieve(){ // Retrieve data and write to file to be used for trent.js 
 
@@ -20,7 +21,7 @@ function retrieve(){ // Retrieve data and write to file to be used for trent.js
 	retrieveProof(smartContractAddress);
 }
 
-//retrieve();
+retrieve();
 
 async function retrieveBlockHeaders(){
 	var blocks = []; 
