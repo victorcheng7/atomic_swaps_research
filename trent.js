@@ -38,10 +38,11 @@ function verify(){
 	const smartContractAddress2 = ""; // NOTE Change contract address here
 
 	const contractFunds = 1000;  // NOTE change this value depending on agreed upon funds
+	const d = blockHeaders.length;
 
 	// if all pass, return signature
 	return Promise.all([
-		verifyBlockHeaders(blockHeaders), 
+		verifyBlockHeaders(blockHeaders, d), 
 		verifyMerkleProof(blockHeaders[blockHeaders.length-1], merkleProof, byteCode, fromAddress, sendToAddress, smartContractCode, smartContractAddress1, contractFunds)
 		/*verifyMerkleProof(blockHeaders[blockHeaders.length-1], merkleProof, byteCode, sendToAddress, fromAddress, smartContractCode, smartContractAddress2, contractFunds)*/])
 	.then((result) => {
@@ -50,10 +51,13 @@ function verify(){
 	}).catch(console.log);
 }
 
-async function verifyBlockHeaders(blockHeaders){ 
+async function verifyBlockHeaders(blockHeaders, d){ 
 	var parentHash = blockHeaders[0].parentHash;
 	return blockHeaders.every(function(block){
 		var check = true;
+
+		// Check if it's at least d blocks deep
+		if(blockHeaders.length < d) check = false;
 
 		// Compute hash of blockheader data and see if it equals to hash
 		if(!utils.verifyHeaderHash(block)) check = false;
