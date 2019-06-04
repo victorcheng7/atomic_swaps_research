@@ -78,14 +78,15 @@ module.exports = {
 		return Promise.all(storageProofs.map((proof) => {
 			var check = true;
 			// From https://github.com/zmitton/eth-proof/blob/master/getAndVerify.js
+
 			// Validate storage merkle proof checks out
 			if(!getAndVerify.storageAgainstBlockHash(smartContractAddress, proof.key, blockHeaderHash)) check = false;
+			
 			// Verify msg.sender = fromAddress
 			if(proof.key == 0 && proof.value != fromAddress) check = false;
-			// Verify there are sufficient funds
-			if(proof.key == 2 && proof.value != contractFunds) check = false;
-
+			
 			// Verify msg.val contains sufficient funds
+			if(proof.key == 2 && proof.value != contractFunds) check = false;
 
 			return check;
 			/*
